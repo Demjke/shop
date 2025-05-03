@@ -1,0 +1,16 @@
+@use "./abstracts/reset";
+@use "./abstracts/variables";
+@use "./abstracts/mixin";
+@use "./abstracts/global";
+
+@use "./components/header";
+@use "./components/footer";
+@use "./components/navbar";
+
+@use "./pages/home";
+@use "./pages/catalog";
+@use "./pages/product";
+@use "./pages/cart";
+@use "./pages/registration";
+@use "./pages/login";
+@use "./pages/not-found";

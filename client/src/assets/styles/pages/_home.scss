@@ -1,0 +1,182 @@
+.home {
+    &-category {
+        margin-top: 65px;
+    }
+    &-products {
+        margin-top: 96px;
+        &__title {
+            color: rgb(34, 34, 34);
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 36px;
+            text-align: center;
+        }
+        &__text {
+            margin-top: 6px;
+            color: rgb(159, 159, 159);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            text-align: center;
+        }
+        &__wrapper {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        &__btn {
+            margin: 48px auto 0;
+            max-width: 212px;
+            width: 100%;
+            height: 48px;
+            border: 1px solid rgb(255, 106, 106);
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: rgb(242, 99, 118);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            text-decoration: none;
+            &:hover {
+                background: rgb(255, 106, 106);
+                color: #fff;
+            }
+        }
+    }
+    &-adva {
+        margin-top: 95px;
+    }
+}
+.intro {
+    background: #f1e4e6 url("../../images/pages/home/bg.png") no-repeat center center / contain;
+    padding: 290px 0 381px;
+    &-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 16px;
+        border-left: 12px solid rgb(241, 109, 127);
+    }
+    &-title {
+        color: rgb(34, 34, 34);
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    &-text {
+        color: rgb(34, 34, 34);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+}
+.category {
+    &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    &-item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 180px;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(33, 22, 22, 0.7);
+            transition: all 0.5s;
+        }
+        &:last-child {
+            grid-column: 1 / -1;
+            width: 100%;
+            height: 180px;
+        }
+        &:hover::before {
+            background: transparent;
+        }
+        &__img {
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            img {
+                max-width: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &__info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        &__subtitle {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        &__title {
+            color: rgb(241, 109, 127);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: center;
+        }
+    }
+}
+.adva {
+    padding: 103px 0 104px;
+    background: rgb(34, 34, 36);
+    &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &-img {
+        display: flex;
+        height: 40px;
+    }
+    &-title {
+        margin-top: 20px;
+        color: rgb(251, 251, 251);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+    }
+    &-text {
+        margin-top: 16px;
+        color: rgb(251, 251, 251);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 17px;
+        text-align: center;
+    }
+}

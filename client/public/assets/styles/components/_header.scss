@@ -1,0 +1,194 @@
+.header {
+    .icon {
+        color: #fff;
+    }
+    position: relative;
+    background: rgb(34, 34, 34);
+    padding: 18px 0;
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+    &-info {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    &-content {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+    &-login {
+        .icon {
+            &:hover {
+                color: rgb(241, 109, 127);
+            }
+        }
+    }
+    &-cart {
+        margin-left: 17px;
+    }
+}
+.search {
+    display: flex;
+    position: relative;
+    z-index: 999;
+    .icon {
+        z-index: 3;
+        width: 20px;
+        cursor: pointer;
+        &:hover {
+            color: rgb(241, 109, 127) !important;
+        }
+    }
+    &-input {
+        position: absolute;
+        width: 400px;
+        top: -5px;
+        left: -5px;
+        height: 40px;
+        outline: none;
+        padding: 0 35px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        font-size: 16px;
+        z-index: 2;
+        &::placeholder {
+            font-size: 16px;
+        }
+    }
+    &-products {
+        padding: 50px 10px 10px;
+        position: absolute;
+        top: 0;
+        left: -5px;
+        border-radius: 5px;
+        width: 400px;
+        background: #fff;
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    }
+    &-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        min-height: 30px;
+        max-height: 250px;
+        overflow-y: auto;
+        /* Скролл */
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgb(241, 109, 127);
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background: rgb(241, 109, 127, 0.3);
+            border-radius: 10px;
+        }
+    }
+    &-close {
+        position: absolute;
+        top: 5px;
+        right: -365px;
+        display: flex;
+        width: 15px;
+        z-index: 3;
+        &:hover {
+            color: rgb(241, 109, 127);
+            cursor: pointer;
+        }
+    }
+    &-product {
+        margin-right: 3px;
+        width: calc(100% - 3px);
+        height: 70px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.3s;
+        text-decoration: none;
+        &__img {
+            min-width: 50px;
+            width: 50px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__title {
+            gap: 10px;
+            font-size: 14px;
+            color: rgb(34, 34, 34);
+            transition: all 0.3s;
+        }
+        &:hover {
+            background: rgb(241, 109, 127);
+            .search-product__title {
+                color: #fff;
+            }
+        }
+    }
+}
+.cart {
+    position: relative;
+    .icon {
+        &:hover {
+            color: rgb(241, 109, 127);
+        }
+    }
+    &-count {
+        top: -8px;
+        right: -9px;
+        position: absolute;
+        background: rgb(241, 109, 127);
+        padding: 2px 6px;
+        border-radius: 100%;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+    }
+}
+.error {
+    &-text {
+        text-align: center;
+        gap: 10px;
+        font-size: 18px;
+        color: red;
+        transition: all 0.3s;
+    }
+}
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid rgb(241, 109, 127);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

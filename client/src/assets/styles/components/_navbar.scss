@@ -1,0 +1,84 @@
+.menu {
+    .icon {
+        &:hover {
+            color: rgb(241, 109, 127);
+        }
+    }
+    &-close {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+        &:hover {
+            color: rgb(241, 109, 127);
+        }
+    }
+    &-wrapper {
+        min-width: 232px;
+        top: 100%;
+        right: 0;
+        position: absolute;
+        z-index: 999;
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+        background: rgb(255, 255, 255);
+        padding: 32px 10px 32px 32px;
+    }
+    &-title {
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+    }
+    &-list {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 400px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgb(241, 109, 127);
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background: rgb(241, 109, 127, 0.3);
+            border-radius: 10px;
+        }
+        &__category {
+        }
+        &__title {
+            color: rgb(241, 109, 127);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            text-transform: uppercase;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+        &__links {
+            margin: 12px 0 0 21px;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+        &__item {
+        }
+        &__link {
+            color: rgb(111, 110, 110);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover {
+                color: rgb(241, 109, 127);
+            }
+        }
+    }
+}

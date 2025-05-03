@@ -1,0 +1,166 @@
+[
+    {
+        "id": 1,
+        "name": "mens",
+        "image": "category-1.png",
+        "descriptions": "HOT DEAL",
+        "info": "FOR MEN",
+        "subcategories": [
+            {
+                "id": 1,
+                "name": "bags"
+            },
+            {
+                "id": 2,
+                "name": "denim"
+            },
+            {
+                "id": 3,
+                "name": "hoodies"
+            },
+            {
+                "id": 4,
+                "name": "jackets"
+            },
+            {
+                "id": 5,
+                "name": "polos"
+            },
+            {
+                "id": 6,
+                "name": "shirts"
+            },
+            {
+                "id": 7,
+                "name": "shoes"
+            },
+            {
+                "id": 8,
+                "name": "sweaters"
+            },
+            {
+                "id": 9,
+                "name": "t-shirts"
+            },
+            {
+                "id": 10,
+                "name": "tanks"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "womens",
+        "image": "category-2.png",
+        "descriptions": "30% OFF",
+        "info": "FOR WOMEN",
+        "subcategories": [
+            {
+                "id": 1,
+                "name": "bags"
+            },
+            {
+                "id": 2,
+                "name": "denim"
+            },
+            {
+                "id": 3,
+                "name": "hoodies"
+            },
+            {
+                "id": 4,
+                "name": "jackets"
+            },
+            {
+                "id": 5,
+                "name": "polos"
+            },
+            {
+                "id": 6,
+                "name": "shirts"
+            },
+            {
+                "id": 7,
+                "name": "shoes"
+            },
+            {
+                "id": 8,
+                "name": "sweaters"
+            },
+            {
+                "id": 9,
+                "name": "t-shirts"
+            },
+            {
+                "id": 10,
+                "name": "tanks"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "kids",
+        "image": "category-3.png",
+        "descriptions": "NEW ARRIVALS",
+        "info": "FOR KIDS",
+        "subcategories": [
+            {
+                "id": 1,
+                "name": "bags"
+            },
+            {
+                "id": 2,
+                "name": "denim"
+            },
+            {
+                "id": 3,
+                "name": "hoodies"
+            },
+            {
+                "id": 4,
+                "name": "jackets"
+            },
+            {
+                "id": 5,
+                "name": "polos"
+            },
+            {
+                "id": 6,
+                "name": "shirts"
+            },
+            {
+                "id": 7,
+                "name": "shoes"
+            },
+            {
+                "id": 8,
+                "name": "sweaters"
+            },
+            {
+                "id": 9,
+                "name": "t-shirts"
+            },
+            {
+                "id": 10,
+                "name": "tanks"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "accesories",
+        "image": "category-4.png",
+        "descriptions": "LUXIROUS & TRENDY",
+        "info": "ACCESORIES",
+        "subcategories": [
+            {
+                "id": 1,
+                "name": "glasses"
+            },
+            {
+                "id": 2,
+                "name": "perfumes"
+            }
+        ]
+    }
+]
