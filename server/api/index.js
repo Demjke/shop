@@ -40,4 +40,10 @@ app.get("/api/test", (req, res) => {
   res.json({ message: "API is working" });
 });
 
+// Обработка ошибок
+app.use((err, req, res, next) => {
+  console.error("Server error:", err);
+  res.status(500).json({ error: "Internal server error" });
+});
+
 export default app;
