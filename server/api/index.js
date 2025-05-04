@@ -1,21 +1,21 @@
+// api/index.js
 import cors from "cors";
 import express from "express";
+import serverless from 'serverless-http';
 import categoriesRoutes from '../routes/categories.js';
 import productsRoutes from '../routes/products.js';
 
 const app = express();
 
 app.use(cors({
-  origin: 'https://demjke.github.io', // или массив разрешённых origin'ов
+  origin: 'https://demjke.github.io',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 app.use(express.json());
 app.use('/api/products', productsRoutes);
-app.use('/api/categories', categoriesRoutes)
+app.use('/api/categories', categoriesRoutes);
 
-// Раздача статических файлов из папки uploads
-app.use("/uploads", express.static("./public"));
-
-export default app;
+export const handler = serverless(app);
