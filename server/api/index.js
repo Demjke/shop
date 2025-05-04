@@ -1,5 +1,6 @@
 import cors from "cors";
 import express from "express";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import categoriesRoutes from "../routes/categories.js";
@@ -21,24 +22,30 @@ app.use(cors({
 // Логирование запросов
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  res.on("finish", () => {
+    console.log(`Response Status: ${res.statusCode}`);
+  });
   next();
 });
-
-app.use(express.json());
-
-// Маршруты API
-app.use("/api/categories", categoriesRoutes);
-app.use("/api/products", productsRoutes);
 
 // Раздача статических файлов из папки uploads
 const uploadsPath = path.join(__dirname, "../uploads");
 console.log("Serving static files from:", uploadsPath);
+
+// Проверка существования папки uploads
+if (fs.existsSync(uploadsPath)) {
+  console.log("Uploads directory exists");
+  console.log("Files in uploads/products:", fs.readdirSync(path.join(uploadsPath, "products")));
+  console.log("Files in uploads/categories:", fs.readdirSync(path.join(uploadsPath, "categories")));
+} else {
+  console.error("Uploads directory does not exist at:", uploadsPath);
+}
+
 app.use("/uploads", express.static(uploadsPath));
 
-// Тестовый эндпоинт
-app.get("/api/test", (req, res) => {
-  res.json({ message: "API is working" });
-});
+// Маршруты API
+app.use("/api/categories", categoriesRoutes);
+app.use("/api/products", productsRoutes);
 
 // Обработка ошибок
 app.use((err, req, res, next) => {
