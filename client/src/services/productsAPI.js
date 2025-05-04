@@ -9,7 +9,10 @@ export const fetchProducts = async (dispatch, { query, params }) => {
     if (!query) dispatch(getSearchProducts([]));
 
     const { data } = await axios.get(`${apiUrl}products`, {
-      params: query ? { query } : params || {}
+      params: query ? { query } : params || {},
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     query ? dispatch(getSearchProducts(data.products)) : dispatch(getProducts(data));

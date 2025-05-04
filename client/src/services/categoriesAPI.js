@@ -6,7 +6,11 @@ const apiUrl = process.env.REACT_APP_API_URL;
 export const fetchCategories = async (dispatch) => {
   dispatch(loadingCategories());
   try {
-    const { data: categories } = await axios.get(`${apiUrl}categories`);
+    const { data: categories } = await axios.get(`${apiUrl}categories`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     dispatch(getCategories(categories));
     return categories;
   } catch (err) {
