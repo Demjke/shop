@@ -4,7 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Redirecting...</title>
-        <meta http-equiv="refresh" content="0;url=/shop/index.html" />
+        <script>
+            // Сохраняем путь (например, /shop/cart -> /cart)
+            const basePath = "/shop";
+            const currentPath = window.location.pathname.startsWith(basePath)
+                ? window.location.pathname.slice(basePath.length) || "/"
+                : window.location.pathname || "/";
+            // Перенаправляем на /shop/ с сохранением пути
+            window.location.replace(basePath + currentPath);
+        </script>
     </head>
     <body>
         <p>Redirecting...</p>
