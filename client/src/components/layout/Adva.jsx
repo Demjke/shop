@@ -7,7 +7,7 @@ const Adva = () => {
                 <div className="adva-wrapper">
                     <div className="adva-item">
                         <div className="adva-img">
-                            <img src="/assets/images/pages/home/adva-1.svg" alt="" />
+                            <img src="/shop/assets/images/pages/home/adva-1.svg" alt="" />
                         </div>
                         <div className="adva-title">Free Delivery</div>
                         <div className="adva-text">
@@ -17,7 +17,7 @@ const Adva = () => {
                     </div>
                     <div className="adva-item">
                         <div className="adva-img">
-                            <img src="/assets/images/pages/home/adva-2.svg" alt="" />
+                            <img src="/shop/assets/images/pages/home/adva-2.svg" alt="" />
                         </div>
                         <div className="adva-title">Sales & discounts</div>
                         <div className="adva-text">
@@ -27,7 +27,7 @@ const Adva = () => {
                     </div>
                     <div className="adva-item">
                         <div className="adva-img">
-                            <img src="/assets/images/pages/home/adva-3.svg" alt="" />
+                            <img src="/shop/assets/images/pages/home/adva-3.svg" alt="" />
                         </div>
                         <div className="adva-title">Quality assurance</div>
                         <div className="adva-text">

@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
                 </div>
             </div>
             <div className="product-card__info">
-                <Link to={`/products/${id}`} className="product-card__title">
+                <Link to={`/shop/products/${id}`} className="product-card__title">
                     {name}
                 </Link>
                 <div className="product-card__text">{description}</div>

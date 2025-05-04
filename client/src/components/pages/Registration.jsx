@@ -66,7 +66,7 @@ const Registration = () => {
                                 <button type="submit" className="registration-form__btn">
                                     JOIN NOW <LoginArrow className="icon" />
                                 </button>
-                                <Link to="/login" className="registration-form__btn">
+                                <Link to="/shop/login" className="registration-form__btn">
                                     LOGIN <LoginArrow className="icon" />
                                 </Link>
                             </div>

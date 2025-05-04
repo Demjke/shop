@@ -4,7 +4,7 @@ const CategoryItem = ({ category }) => {
     const { id, name, image, descriptions, info } = category;
 
     return (
-        <Link to={`catalog/${name}`} className="category-item">
+        <Link to={`/shop/catalog/${name}`} className="category-item">
             <div className="category-item__img">
                 <img src={`${process.env.REACT_APP_UPLOADS}categories/${image}`} alt={`category-${id}`} />
             </div>

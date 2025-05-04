@@ -63,7 +63,7 @@ const Home = () => {
                     ) : (
                         <div className="home-products__error">{errorProducts ? "Ошибка загрузки" : "Товаров нет"}</div>
                     )}
-                    <Link to="/catalog" className="home-products__btn">
+                    <Link to="/shop/catalog" className="home-products__btn">
                         Browse All Product
                     </Link>
                 </div>
