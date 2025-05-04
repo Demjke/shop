@@ -13,9 +13,17 @@ app.use(cors({
   credentials: true,
 }));
 
+// Явная обработка OPTIONS-запросов (для Vercel)
+app.options("*", cors());
+
 app.use(express.json());
 
 app.use("/api/categories", categoriesRoutes);
 app.use("/api/products", productsRoutes);
 
-export default app; // 👈 экспорт по умолчанию для Vercel
+// Добавьте тестовый эндпоинт для проверки
+app.get("/api/test", (req, res) => {
+  res.json({ message: "API is working" });
+});
+
+export default app;
