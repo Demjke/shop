@@ -1,22 +1,29 @@
-import cors from "cors";
-import express from "express";
-import serverless from "serverless-http";
-import categoriesRoutes from "../routes/categories.js";
-import productsRoutes from "../routes/products.js";
+import cors from 'cors';
+import express from 'express';
+import serverless from 'serverless-http';
+import categoriesRoutes from '../routes/categories.js';
+import productsRoutes from '../routes/products.js';
 
 const app = express();
 
 // Настройка CORS
+const allowedOrigins = ['https://demjke.github.io']; // Разрешаем запросы только с этого домена
 app.use(cors({
-  origin: "*", // Разрешаем запросы с любых доменов
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type"], // Только заголовки, которые необходимы
-  credentials: false, // Отключаем использование cookies и авторизационных заголовков
+  origin: (origin, callback) => {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true); // Если домен разрешен или запрос идет с локального хоста
+    } else {
+      callback(new Error('Not allowed by CORS'), false); // Все остальные домены — не разрешаем
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false
 }));
 
 app.use(express.json());
 
-app.use("/api/categories", categoriesRoutes);
-app.use("/api/products", productsRoutes);
+app.use('/api/categories', categoriesRoutes);
+app.use('/api/products', productsRoutes);
 
 export const handler = serverless(app);
