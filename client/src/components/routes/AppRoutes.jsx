@@ -11,7 +11,7 @@ import Registration from "../pages/Registration";
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/shop" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/catalog/*" element={<Catalog />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registration" element={<Registration />} />
