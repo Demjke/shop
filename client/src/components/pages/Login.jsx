@@ -21,7 +21,7 @@ const Login = () => {
                                 <button type="submit" className="login-form__btn">
                                     JOIN NOW <LoginArrow className="icon" />
                                 </button>
-                                <Link to="/shop/registration" className="login-form__btn">
+                                <Link to="/registration" className="login-form__btn">
                                     REGISTRATION <LoginArrow className="icon" />
                                 </Link>
                             </div>

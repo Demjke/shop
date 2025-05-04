@@ -25,7 +25,7 @@ const Cart = () => {
                                     <button className="cart-btn" onClick={() => dispatch(clearCart())}>
                                         CLEAR SHOPPING CART
                                     </button>
-                                    <Link to="/shop/catalog" className="cart-btn">
+                                    <Link to="/catalog" className="cart-btn">
                                         CONTINUE SHOPPING
                                     </Link>
                                 </div>

@@ -19,10 +19,10 @@ const Header = () => {
                     </div>
                     <div className="header-content">
                         <Menu />
-                        <Link to="/shop/login" className="header-login">
+                        <Link to="/login" className="header-login">
                             <LoginIcon className="icon" />
                         </Link>
-                        <Link to="/shop/cart" className="header-cart cart">
+                        <Link to="/cart" className="header-cart cart">
                             <CartIcon className="icon" />
                             {/* {countCart > 0 && <div className="cart-count">{countCart}</div>} */}
                         </Link>

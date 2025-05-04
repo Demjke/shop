@@ -40,14 +40,14 @@ const Menu = () => {
                                 categories.map(({ id, name, subcategories }) => (
                                     <li className="menu-list__category" key={id}>
                                         {}
-                                        <Link to={`/shop/catalog/${name}`} className="menu-list__title">
+                                        <Link to={`/catalog/${name}`} className="menu-list__title">
                                             {name}
                                         </Link>
                                         <ul className="menu-list__links">
                                             {subcategories.map(({ id: subId, name: subName }) => (
                                                 <li className="menu-list__item" key={subId}>
                                                     <Link
-                                                        to={`/shop/catalog/${name}/${subName}`}
+                                                        to={`/catalog/${name}/${subName}`}
                                                         className="menu-list__link"
                                                     >
                                                         {subName}
