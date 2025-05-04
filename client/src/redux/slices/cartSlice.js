@@ -31,16 +31,11 @@ const cartSlice = createSlice({
   initialState: loadCartFromStorage(),
   reducers: {
     addToCart: (state, action) => {
-      console.log("Состояние корзины:", state);
-      console.log("Payload:", action.payload);
 
       if (!action.payload || !action.payload.id) {
         console.error("Некорректный payload:", action.payload);
         return state;
       }
-
-      console.log("ID товара:", action.payload.id);
-
       const exist = state.find((cart) => cart && cart.item && cart.item.id === action.payload.id);
       if (exist) {
         exist.count += 1;

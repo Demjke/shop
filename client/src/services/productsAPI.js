@@ -19,7 +19,6 @@ export const fetchProducts = async (dispatch, { query, params }) => {
 
     return data.products;
   } catch (err) {
-    console.error("Fetch products error:", err.response?.status, err.response?.data, err.message);
     dispatch(errorProducts(err.message));
     return [];
   }

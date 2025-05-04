@@ -47,6 +47,11 @@
             font-size: 24px;
             font-weight: 400;
             line-height: 29px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &__list {
             margin-top: 42px;

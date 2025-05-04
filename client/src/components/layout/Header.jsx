@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ReactComponent as CartIcon } from "../../assets/images/components/header/cart.svg";
 import { ReactComponent as LoginIcon } from "../../assets/images/components/header/login.svg";
@@ -7,6 +8,8 @@ import Menu from "../navigation/Menu";
 import Search from "../UI/Search";
 
 const Header = () => {
+    const countCart = useSelector(state => state.cart.length);
+
     return (
         <header className="header">
             <div className="container">
@@ -24,7 +27,7 @@ const Header = () => {
                         </Link>
                         <Link to="/cart" className="header-cart cart">
                             <CartIcon className="icon" />
-                            {/* {countCart > 0 && <div className="cart-count">{countCart}</div>} */}
+                            {countCart > 0 && <div className="cart-count">{countCart}</div>}
                         </Link>
                     </div>
                 </div>

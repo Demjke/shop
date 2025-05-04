@@ -14,7 +14,6 @@ export const fetchCategories = async (dispatch) => {
     dispatch(getCategories(categories));
     return categories;
   } catch (err) {
-    console.error("Fetch categories error:", err.response?.status, err.response?.data, err.message);
     dispatch(errorCategories(err.message));
     return [];
   }
