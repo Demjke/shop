@@ -6,11 +6,12 @@ import productsRoutes from "../routes/products.js";
 
 const app = express();
 
+// Настройка CORS
 app.use(cors({
-  origin: "*",  // Разрешает доступ с любых источников
+  origin: "*", // Разрешаем запросы с любых доменов
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
+  allowedHeaders: ["Content-Type"], // Только заголовки, которые необходимы
+  credentials: false, // Отключаем использование cookies и авторизационных заголовков
 }));
 
 app.use(express.json());
@@ -18,4 +19,4 @@ app.use(express.json());
 app.use("/api/categories", categoriesRoutes);
 app.use("/api/products", productsRoutes);
 
-export const handler = serverless(app); 
+export const handler = serverless(app);
