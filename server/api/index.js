@@ -1,11 +1,11 @@
 import cors from "cors";
 import express from "express";
-import serverless from "serverless-http";
 import categoriesRoutes from "../routes/categories.js";
 import productsRoutes from "../routes/products.js";
 
 const app = express();
 
+// CORS
 app.use(cors({
   origin: "https://demjke.github.io",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -18,4 +18,4 @@ app.use(express.json());
 app.use("/api/categories", categoriesRoutes);
 app.use("/api/products", productsRoutes);
 
-export const handler = serverless(app); 
+export default app; // 👈 экспорт по умолчанию для Vercel
