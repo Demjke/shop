@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Redirecting...</title>
-        <script>
-            // Сохраняем путь (например, /shop/cart -> /cart)
-            const basePath = "/shop";
-            const currentPath = window.location.pathname.startsWith(basePath)
-                ? window.location.pathname.slice(basePath.length) || "/"
-                : window.location.pathname || "/";
-            // Перенаправляем на /shop/ с сохранением пути
-            window.location.replace(basePath + currentPath);
-        </script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Shop</title>
     </head>
     <body>
-        <p>Redirecting...</p>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+        <script src="/shop/static/js/main.8795cba8.js"></script>
     </body>
 </html>
