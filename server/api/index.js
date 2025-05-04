@@ -10,7 +10,7 @@ const app = express();
 const allowedOrigins = ['https://demjke.github.io']; // Разрешаем запросы только с этого домена
 app.use(cors({
   origin: (origin, callback) => {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+    if (allowedOrigins.includes(origin) || !origin) {
       callback(null, true); // Если домен разрешен или запрос идет с локального хоста
     } else {
       callback(new Error('Not allowed by CORS'), false); // Все остальные домены — не разрешаем
