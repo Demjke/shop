@@ -7,10 +7,10 @@ export const fetchCategories = async (dispatch) => {
   dispatch(loadingCategories());
   try {
     const { data: categories } = await axios.get(`${apiUrl}categories`);
-    dispatch(getCategories(categories))
-
+    dispatch(getCategories(categories));
     return categories;
   } catch (err) {
+    console.error("Fetch categories error:", err.response?.status, err.response?.data, err.message);
     dispatch(errorCategories(err.message));
     return [];
   }
