@@ -14,17 +14,24 @@ app.use(cors({
 }));
 
 // Явная обработка OPTIONS для всех маршрутов
-app.options("*", cors({
-  origin: "https://demjke.github.io",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
-}));
+app.options("*", (req, res) => {
+  res.set({
+    "Access-Control-Allow-Origin": "https://demjke.github.io",
+    "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type,Authorization",
+    "Access-Control-Allow-Credentials": "true",
+  });
+  res.status(204).send();
+});
 
-// Логирование запросов для отладки
+// Логирование всех запросов
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   console.log("Headers:", req.headers);
+  res.on("finish", () => {
+    console.log(`Response Status: ${res.statusCode}`);
+    console.log("Response Headers:", res.getHeaders());
+  });
   next();
 });
 
